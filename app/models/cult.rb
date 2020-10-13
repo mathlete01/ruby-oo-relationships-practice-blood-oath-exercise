@@ -29,26 +29,26 @@ class Cult
     end
   end
 
-  attr_accessor :name, :location, :founding_year, :slogan, :cult_population
+  attr_accessor :name, :location, :founding_year, :slogan, :cult_pop
 
   def initialize(name, location, founding_year, slogan)
     @name = name
     @location = location
     @founding_year = founding_year
     @slogan = slogan
-    @cult_population = []
+    @cult_pop = []
     @@all << self
+    puts "* Adding to Cult.all: #{self.name}"
   end
 
   # takes in an argument of a Follower instance and adds them to this cult's list of followers
-  def recruit_follower(follower)
-    Blood_Oath.new(follower, self)
-    @cult_population << follower
+  def recruit_follower(follower, date)
+    Blood_Oath.new(follower, self, date)
   end
 
   # returns an Integer that is the number of followers in this cult
   def cult_population
-    @cult_population.length
+    @cult_pop.length
   end
 
 end

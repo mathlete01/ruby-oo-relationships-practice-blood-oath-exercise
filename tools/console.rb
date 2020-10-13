@@ -9,9 +9,11 @@ end
 
 
 
-puts "Mwahahaha!" # just in case pry is buggy and exits
+#puts "Mwahahaha!" # just in case pry is buggy and exits
 
 satans_brood = Cult.new("Satan's Brood", "Florida", 2015, "The Darke Lorde commands it")
+
+iphone_users = Cult.new("iPhone Users", "Cupertino", 2007, "We hate green text")
 
 #puts satans_brood.name
 #puts satans_brood.slogan
@@ -28,9 +30,37 @@ satans_brood = Cult.new("Satan's Brood", "Florida", 2015, "The Darke Lorde comma
 puts "Making new followers"
 puts "--------------------"
 samantha = Follower.new("Samantha", 19, "I dunno, sounds fun!")
-puts samantha.name
-puts samantha.age
-puts samantha.life_motto
+ricky = Follower.new("Ricky", 45, "Satan is Life")
+sabrina = Follower.new("Sabrina", 30, "I heart Lucifer")
+# puts samantha.name
+# puts samantha.age
+# puts samantha.life_motto
+
+puts "Joining Follower to Cult"
+puts "--------------------"
+samantha.join_cult(satans_brood, "2015-06-06")
+ricky.join_cult(satans_brood, "2015-06-13")
 
 
-#binding.pry
+puts "Recruited to Cult"
+puts "--------------------"
+satans_brood.recruit_follower(sabrina, "2017-09-02")
+iphone_users.recruit_follower(samantha, "2015-07-06")
+
+puts "Cult Population"
+puts "--------------------"
+#puts satans_brood.cult_population
+
+puts "Follower Cults"
+puts "--------------------"
+#puts "samantha.cults = #{samantha.cults}"
+
+puts "Of certain age"
+puts "--------------------"
+#puts Follower.of_a_certain_age(30).inspect
+
+puts "Find by Location"
+puts "------------------"
+
+
+binding.pry
